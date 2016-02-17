@@ -1,354 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>SFV OKI LOL</title>
-<style>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <title>SFV OKI LOL</title>
 
-  body {
-    background-color: #000;
-    color: #fff;
-    font-family: sans-serif;
-    margin-bottom: 500px;
-  }
+</head>
+  <script>
+    var MAX_OKIZEME = 75;
+    var MAX_FRAMES = 119;
+  </script>
 
-  path {
-    stroke-width: 1px;
-    stroke: #333;
-    fill: #ddd;
-    vector-effect: non-scaling-stroke;
-  }
-
-  a {
-    color: #0079d3;
-  }
-
-  .GRID line {
-    vector-effect: non-scaling-stroke;
-  }
-
-  .REPLAY line {
-    vector-effect: non-scaling-stroke;
-  }
-
-  .UNOC { display: none; }
-
-  .fred { fill: #c00 !important; }
-
-  .gray { stroke: #333; }
-  .red { stroke: #f00; }
-  .green { stroke: #0f0; }
-  .blue { stroke: #00f; }
-  .cyan { stroke: #0ff; }
-  .yellow { stroke: #ff0; }
-
-  .p1gray { stroke: #333; }
-  .p1red { stroke: #f00; }
-  .p1green { stroke: #0f0; }
-  .p1blue { stroke: #00f; }
-  .p1hit { stroke: #c6f; }
-  .p1cyan { stroke: #0ff; }
-  .p1yellow { stroke: #ff0; }
-
-  .p2gray { stroke: #333; }
-  .p2red { stroke: #f66; }
-  .p2green { stroke: #6f6; }
-  .p2blue { stroke: #66f; }
-  .p2hit { stroke: #c6f; }
-  .p2cyan { stroke: #6ff; }
-
-  .hitbox { color: #f99; }
-  .hit { color: #969; }
-  .first { color: #cfc; background-color: #363;}
-  .iasa1 { color: #999;}
-
-  #REPLAYS {
-    text-align: center;
-    /*display: inline-block;*/
-  }
-
-  #REPLAYS  !svg + div {
-    /*display: inline-block;*/
-  }
-
-  #REPLAYS div {
-    height: 500px;
-    overflow-x: hidden;
-    overflow-y: auto;
-    display: inline-block;
-    padding-right: 2em;
-  }
-
-  #LINKS {
-    /*height: 500px;*/
-    white-space: nowrap;
-    overflow: auto;
-  }
-
-  #FRAMES, #KD, #TOTALS {
-    white-space: nowrap;
-    /*height: 500px;*/
-    /*overflow-x: hidden;*/
-    /*overflow-y: auto;*/
-    /*display: inline-block;*/
-    /*padding-right: 2em;*/
-  }
-
-  #FRAMES div {
-    display: inline-block;
-    vertical-align: top;
-  }
-
-  table.FRAMES {
-    table-layout: fixed;
-    font: 10px sans-serif;
-    text-align: center;
-    color: #ccc;
-  }
-
-  table.FRAMES tr:nth-child(even) {
-    background-color: #333; 
-  }
-
-  table.FRAMES tr:nth-child(odd) {
-    background-color: #111; 
-  }
-  table.FRAMES td {
-    white-space: nowrap;
-  }
-
-  table.FRAMES tr:hover {
-    background-color: #030;
-  }
-
-  table.FRAMES tr.UC {
-    background-color: #060;
-  }
-  table.FRAMES td.UC {
-    background-color: #030;
-  }
-
-  #LINKS div.COL {
-    display: inline-block;
-    vertical-align: top;
-  }
-
-  #LINKS div.COL div {
-    text-align: left;
-    padding: 10px;
-  }
-
-  #LINKS button {
-    background-color: #ccc;
-    padding: 10px 10px;
-  }
-
-  svg {
-    border: 1px solid #333;
-    margin-top: 10px;
-  }
-
-  .REPLAY rect {
-    stroke-width: 1px;
-    /*stroke: #333;*/
-    fill: none;
-    /*opacity: 0.8;*/
-    mix-blend-mode: screen;
-    vector-effect: non-scaling-stroke;
-  }
-
-  .REPLAY rect.clip {
-    fill: #330;
-  }
-
-  .REPLAY text {
-    text-anchor: middle;
-    fill: #999;
-    font: 8px sans-serif;
-  }
-
-  .rects text {
-    text-anchor: middle;
-    fill: #999;
-    font: 10px sans-serif;
-  }
-
-  .axis {
-    font: 10px sans-serif;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-  }
-
-  .axis text {
-    fill: #ddd;
-  }
-
-  .axis .domain {
-    fill: none;
-    stroke: #000;
-    stroke-opacity: .3;
-    stroke-width: 10px;
-    stroke-linecap: round;
-  }
-
-  .axis .halo {
-    fill: none;
-    stroke: #ddd;
-    stroke-width: 8px;
-    stroke-linecap: round;
-  }
-
-  .slider .handle {
-    fill: #fff;
-    fill-opacity: .75;
-    stroke: #000;
-    stroke-opacity: .5;
-    stroke-width: 1.25px;
-    cursor: crosshair;
-  }
-
-  #OKI > span.GRID {
-    color: #ccc;
-  }
-
-  .GRID > span:nth-child(10n) {
-    color: #eee;
-  }
-
-
-  .GRID > span.ACTIVE {
-    color: #fcc;
-  }
-
-  .GRID > span.STARTUP {
-    color: #aaa;
-  }
-
-  .GRID > span.RECOVERY {
-    color: #aaa;
-  }
-
-  .GRID > span.WAKEUP {
-    color: #cfc;
-  }
-
-  .GRID > span.FK {
-    color: #ccc;
-  }
-
-
-  .UCLICK:hover {
-    color: #fff;
-    background-color: #990;
-    cursor: pointer;
-  }
-
-  button.CHAR {
-    padding: 5px;
-    margin: 3px;
-    /*width: 8%;*/
-    background-color: #999;
-  }
-
-  button.SEL {
-    background-color: #ffc;
-  }
-
-  #OKI {    
-    cursor: pointer;
-  }
-
-  .CMD {
-    color: #999;
-  }
-
-  .UCY1 {    
-    background-color: #033;
-  }
-
-  .UCY2 {    
-    background-color: #033;
-  }
-
-  .UCY3 {    
-    background-color: #220;
-  }
-
-  .UCY4 {    
-    background-color: #220;
-  }
-
-  .UCY5 {    
-    background-color: #220;
-  }
-
-  .UCY6 {    
-    background-color: #220;
-  }
-
-  .UCY7 {    
-    background-color: #220;
-  }
-
-
-  .UCOKI {
-    background-color: #020;
-  }
-
-  #FRAMEKILLS {
-    line-height: 1.5em;
-  }
-
-  .FRAMEKILL {
-    color: #999;
-  }
-
-  button.CHARRESET {
-    margin-left: 50px;
-  }
- 
-</style>
-<style id="STYLEOKI1"></style>
-<style id="STYLEOKI2"></style>
+  <script>
+    for ( var i = 1 ; i < MAX_OKIZEME ; i++) {
+      document.write('<style id="STYLEOKI' +i+ '></style>"');
+    }
+  </script>
 <style id="STYLEOKI3"></style>
-<style id="STYLEOKI4"></style>
-<style id="STYLEOKI5"></style>
-<style id="STYLEOKI6"></style>
-<style id="STYLEOKI7"></style>
 <style id="STYLEKD"></style>
 <style id="STYLEKDR"></style>
 <style id="STYLEKDBR"></style>
 
-</head>
+
 <body>
-<div>
-<a href="https://twitter.com/arlieth/status/743024207689351168">SFV: Tutorial on Toolassisted's Okizeme Calculator and Frametrapped Hitboxes</a>
-</div>
-<div id="REDDIT">
-<!-- <iframe height="302px" width="100%" scrolling="no" frameborder="0" src="//www.redditmedia.com/r/SFV_GUILE/comments/4kceto/sfv_guile_oki_lol/d3dvqky?embed=true&amp;context=0&amp;depth=2&amp;showedits=true&amp;123" style="height: 302px; width: 100%; display: block; max-width: 800px; min-width: 220px; margin: 10px 0px; box-shadow: rgba(0, 0, 0, 0.0470588) 0px 0px 5px 0.5px; box-sizing: border-box;"></iframe>
- -->
-</div>
 <script src="comment-embed.js"></script>
 
 <div id="CHARS"></div>
 <div id="KD"></div>
 <div>
 <pre id="OKI">
-<span class="UCPOINT"      >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="TOP10"   class="GRID">0........1.........2.........3.........4.........5.........6.........7.........8.........9.........10........11........</span>
-<span class="UCPOINT"      >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="TOP1"    class="GRID">12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789</span>
-<span class="UCPOINT"                          >KDBR&nbsp;</span><span id="ADVKDBR" class="GRID"></span>
-<span class="UCPOINT"                     >KDR&nbsp;&nbsp;</span><span id="ADVKDR"  class="GRID"></span>
-<span class="UCPOINT"                >KD&nbsp;&nbsp;&nbsp;</span><span id="ADVKD"   class="GRID"></span>
-<span class="UCPOINT" onclick="MECOKI(1)"      >OKI1&nbsp;</span><span id="ADVOKI1" class="GRID"></span>
-<span class="UCPOINT" onclick="MECOKI(2)"      >OKI2&nbsp;</span><span id="ADVOKI2" class="GRID"></span>
-<span class="UCPOINT" onclick="MECOKI(3)"      >OKI3&nbsp;</span><span id="ADVOKI3" class="GRID"></span>
-<span class="UCPOINT" onclick="MECOKI(4)"      >OKI4&nbsp;</span><span id="ADVOKI4" class="GRID"></span>
-<span class="UCPOINT" onclick="MECOKI(5)"      >OKI5&nbsp;</span><span id="ADVOKI5" class="GRID"></span>
-<span class="UCPOINT" onclick="MECOKI(6)"      >OKI6&nbsp;</span><span id="ADVOKI6" class="GRID"></span>
-<span class="UCPOINT" onclick="MECOKI(7)"      >OKI7&nbsp;</span><span id="ADVOKI7" class="GRID"></span>
-<span class="UCPOINT"      >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="FK"      class="GRID">12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789</span>
-<span class="UCPOINT"      >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="FK10"    class="GRID">0........1.........2.........3.........4.........5.........6.........7.........8.........9.........10........11........</span>
+<span class="UCPOINT"></span><span id="TOP10"   class="GRID">0........1.........2.........3.........4.........5.........6.........7.........8.........9.........10........11........</span>
+<span class="UCPOINT"></span><span id="TOP1"    class="GRID">12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789</span>
+<span class="UCPOINT">KDBR</span><span id="ADVKDBR" class="GRID"></span>
+<span class="UCPOINT">KDR</span><span id="ADVKDR"  class="GRID"></span>
+<span class="UCPOINT">KD</span><span id="ADVKD"   class="GRID"></span>
+<script>
+  for ( var i = 1; i < MAX_OKIZEME ; i++ ) {
+    var el = '<span class="UCPOINT" onclick="MECOKI('+i+')">OKI'+i+'</span><span id="ADVOKI'+i+'" class="GRID"></span>\n';
+    document.write(el);
+  }
+</script>
+<span class="UCPOINT"></span><span id="FK"      class="GRID">12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789</span>
+<span class="UCPOINT"></span><span id="FK10"    class="GRID">0........1.........2.........3.........4.........5.........6.........7.........8.........9.........10........11........</span>
 </pre>
 </div>
 <div id="KILLS"></div>
@@ -356,6 +49,7 @@
 <div id="TOTALS" class="TABLES"></div>
 <pre>
 <div id="FRAMEKILLS"></div>
+
 </pre>
 <pre id="YUNOC">
 SFV OKI LOL
@@ -386,8 +80,8 @@ U KEY U SHORTCUT LOL
 </pre>
 <script src="d3.min.js"></script>
 <script>
-var CHARPLUS = "&middot;";
-var CHARMINUS = "&middot;";
+var CHARPLUS = ".";
+var CHARMINUS = ".";
 var MEOKI = 1;
 var KDMOVE = null;
 var OKIMOVE = null;
@@ -400,14 +94,21 @@ var HASHSTARTUP = 5;
 var HASHACTIVE = 4;
 var HASHRECOVERY = 10;
 var HASHLIST = [];
-var OKILIST = [{FRAMEKILL:1,STARTUP:0,ACTIVE:0,RECOVERY:0,MOVE:""}
-              ,{FRAMEKILL:30,STARTUP:7,ACTIVE:3,RECOVERY:18,MOVE:"stand HP"}
-              ,{FRAMEKILL:84,STARTUP:7,ACTIVE:3,RECOVERY:18,MOVE:"stand HP"}
-              ,{FRAMEKILL:1,STARTUP:0,ACTIVE:0,RECOVERY:0,MOVE:""}
-              ,{FRAMEKILL:1,STARTUP:0,ACTIVE:0,RECOVERY:0,MOVE:""}
-              ,{FRAMEKILL:1,STARTUP:0,ACTIVE:0,RECOVERY:0,MOVE:""}
-              ,{FRAMEKILL:1,STARTUP:0,ACTIVE:0,RECOVERY:0,MOVE:""}
-              ,{FRAMEKILL:1,STARTUP:0,ACTIVE:0,RECOVERY:0,MOVE:""}];
+var OKILIST = []
+
+OKILIST = get_empty_oki_list();
+
+function get_empty_oki() {
+  return {FRAMEKILL:1,STARTUP:0,ACTIVE:0,RECOVERY:0,MOVE:""}
+}
+
+function get_empty_oki_list() {
+  var okilist = []
+  for (i = 1; i <= MAX_OKIZEME ; i++) {
+    okilist.push(get_empty_oki());
+  }
+  return okilist;
+}
 
 function MECHASH() {
   var h = window.location.hash.substr(1).split("/");
@@ -425,7 +126,7 @@ function MECHASH() {
       OKILIST[i].MOVE = "";
     }
   } else {
-    for (var i=1;i<=7;i++) {
+    for (var i=1;i<=MAX_OKIZEME - 1;i++) {
       if (h.length >= i+4) {
         var hh = h[i+3].split(",");
         if (hh.length >= 1 && !isNaN(hh[0]) && hh[0] != "") OKILIST[i].FRAMEKILL = +(hh[0].trim());
@@ -436,8 +137,8 @@ function MECHASH() {
       }
     }
   }
-
 }
+
 
 function UCHASH() {
 
@@ -445,7 +146,7 @@ function UCHASH() {
         //+ "/" + (FRAMEKILL-1) + "/" + HASHSTARTUP + "/" + HASHACTIVE + "/" + HASHRECOVERY
         ;
 
-  for (var i=1;i<=7;i++) {
+  for (var i=1;i<MAX_OKIZEME;i++) {
     h += OKILIST[i].FRAMEKILL + "," + OKILIST[i].STARTUP + "," + OKILIST[i].ACTIVE + "," + OKILIST[i].RECOVERY + "," + OKILIST[i].MOVE.trim().replace(/\s+/g,"+") + "/";
   }
 
@@ -507,8 +208,6 @@ var CHARS = [
       .selectAll("button").data(function(d){return d;}).enter().append("button").attr("class", function(d){ return "CHAR CHAR"+d;})
       .on("click",function(d,i){
         if (d == "HELP") {
-          //var win = window.open("https://twitter.com/TOOLASSlSTED/status/731544334781300736", '_blank');
-          //win.focus();
           d3.select("#YUNOC").node().scrollIntoView();
           return;
         } else if (d == "TABLE") {
@@ -518,22 +217,13 @@ var CHARS = [
           t0.insertBefore(t2,t1);
           return;
         } else if (d == "RESET OKI") {
-          OKILIST = [{FRAMEKILL:1,STARTUP:0,ACTIVE:0,RECOVERY:0,MOVE:""}
-                        ,{FRAMEKILL:1,STARTUP:0,ACTIVE:0,RECOVERY:0,MOVE:""}
-                        ,{FRAMEKILL:1,STARTUP:0,ACTIVE:0,RECOVERY:0,MOVE:""}
-                        ,{FRAMEKILL:1,STARTUP:0,ACTIVE:0,RECOVERY:0,MOVE:""}
-                        ,{FRAMEKILL:1,STARTUP:0,ACTIVE:0,RECOVERY:0,MOVE:""}
-                        ,{FRAMEKILL:1,STARTUP:0,ACTIVE:0,RECOVERY:0,MOVE:""}
-                        ,{FRAMEKILL:1,STARTUP:0,ACTIVE:0,RECOVERY:0,MOVE:""}
-                        ,{FRAMEKILL:1,STARTUP:0,ACTIVE:0,RECOVERY:0,MOVE:""}];
+          OKILIST = get_empty_oki_list();
 
-          MECOKI(7); UCOKI(OKILIST[MEOKI].FRAMEKILL, false);
-          MECOKI(6); UCOKI(OKILIST[MEOKI].FRAMEKILL, false);
-          MECOKI(5); UCOKI(OKILIST[MEOKI].FRAMEKILL, false);
-          MECOKI(4); UCOKI(OKILIST[MEOKI].FRAMEKILL, false);
-          MECOKI(3); UCOKI(OKILIST[MEOKI].FRAMEKILL, false);
-          MECOKI(2); UCOKI(OKILIST[MEOKI].FRAMEKILL, false);
-          MECOKI(1); UCOKI(OKILIST[MEOKI].FRAMEKILL, false);
+          for ( var i = 1 ; i < MAX_OKIZEME ; i++ ) {
+            MECOKI(i);
+            UCOKI(OKILIST[MEOKI].FRAMEKILL, false);
+          }
+
           UCHASH();
           return;
         } else if (d == "FRAME KILL") {
@@ -575,7 +265,7 @@ function UCKD(kd, hash) {
     var text = i<kd ? CHARPLUS : i>=kd+10 ? CHARMINUS : ((i-kd+1)%10);
     adv += "<span class='UCLICK" + (i<kd||i>=kd+10?"":" WAKEUP") + "' onclick='UCKD("+i+")'>" + text + "</span>";
   }
-  adv += "<span class='ADVPLUS'> " + "+" + ((kd-1) + "     ").slice(0,3) + " U HIT " + (kd + "     ").slice(0,3) + " &middot; <span id='OKI12GAP'>0</span>F OKI1-OKI2</span>";
+  adv += "<span class='ADVPLUS'> " + "+" + ((kd-1) + "     ").slice(0,3) + " U HIT " + (kd + "     ").slice(0,3) + " . <span id='OKI12GAP'>0</span>F OKI1-OKI2</span>";
   ADV.html(adv);
   HASHKD = kd;
   if (hash == undefined) UCHASH();
@@ -590,7 +280,7 @@ function UCKDBR(kd, hash) {
     var text = i<kd ? CHARPLUS : i>=kd+10 ? CHARMINUS : ((i-kd+1)%10);
     adv += "<span class='UCLICK" + (i<kd||i>=kd+10?"":" WAKEUP") + "' onclick='UCKDBR("+i+",false);UCKDR("+(i-5)+")'>" + text + "</span>";
   }
-  adv += "<span class='ADVPLUS'> " + "+" + ((kd-1) + "     ").slice(0,3) + " U HIT " + (kd + "     ").slice(0,3) + " &middot; MOVE <span id='KDMOVE'></span></span>";
+  adv += "<span class='ADVPLUS'> " + "+" + ((kd-1) + "     ").slice(0,3) + " U HIT " + (kd + "     ").slice(0,3) + " . MOVE <span id='KDMOVE'></span></span>";
   ADV.html(adv);
   HASHKDBR = kd;
   if (hash == undefined) UCHASH();
@@ -603,7 +293,7 @@ function UCKDR(kd, hash) {
     var text = i<kd ? CHARPLUS : i>=kd+10 ? CHARMINUS : ((i-kd+1)%10);
     adv += "<span class='UCLICK" + (i<kd||i>=kd+10?"":" WAKEUP") + "' onclick='UCKDR("+i+",false);UCKDBR("+(i+5)+");'>" + text + "</span>";
   }
-  adv += "<span class='ADVPLUS'> " + "+" + ((kd-1) + "     ").slice(0,3) + " U HIT " + (kd + "     ").slice(0,3) + " &middot;  CMD <span id='KDCMD'></span></span>";
+  adv += "<span class='ADVPLUS'> " + "+" + ((kd-1) + "     ").slice(0,3) + " U HIT " + (kd + "     ").slice(0,3) + " .  CMD <span id='KDCMD'></span></span>";
   ADV.html(adv);  
   HASHKDR = kd;
   if (hash == undefined) UCHASH();
@@ -674,7 +364,7 @@ function UCOKI(kd, hash) {
 
     adv += "<span class='UCLICK " + spanclass + "' onclick='MECOKI("+MEOKI+");UCOKI("+i+")'>" + text + "</span>";
   }
-  adv += "<span class='ADVPLUS' onclick='MECOKI("+MEOKI+")'> " + "+" + ((FRAMEKILL-1) + "     ").slice(0,3) + " U HIT " + ((FRAMEKILL + startup) + "     ").slice(0,3) + " &middot; " + ("     " + (total)).slice(-3) + "F " + move + "</span>";
+  adv += "<span class='ADVPLUS' onclick='MECOKI("+MEOKI+")'> " + "+" + ((FRAMEKILL-1) + "     ").slice(0,3) + " U HIT " + ((FRAMEKILL + startup) + "     ").slice(0,3) + " . " + ("     " + (total)).slice(-3) + "F " + move + "</span>";
   ADV.html(adv);
   if (hash == undefined) UCHASH();
 
@@ -889,20 +579,11 @@ UCTOP1();
 UCKD(HASHKD, false);
 UCKDBR(HASHKDBR, false);
 UCKDR(HASHKDR, false);
-MECOKI(1);
-UCOKI(OKILIST[MEOKI].FRAMEKILL, false);
-MECOKI(2);
-UCOKI(OKILIST[MEOKI].FRAMEKILL, false);
-MECOKI(3);
-UCOKI(OKILIST[MEOKI].FRAMEKILL, false);
-MECOKI(4);
-UCOKI(OKILIST[MEOKI].FRAMEKILL, false);
-MECOKI(5);
-UCOKI(OKILIST[MEOKI].FRAMEKILL, false);
-MECOKI(6);
-UCOKI(OKILIST[MEOKI].FRAMEKILL, false);
-MECOKI(7);
-UCOKI(OKILIST[MEOKI].FRAMEKILL, false);
+
+for ( var i = 1 ; i < MAX_OKIZEME ; i++ ) {
+  MECOKI(i);
+  UCOKI(OKILIST[MEOKI].FRAMEKILL, false);
+}
 UCFK();
 UCHASH();
 
@@ -915,6 +596,9 @@ d3.select("body").on("keydown", function() {
     case 0x65: case 0x35: MECOKI(5); break;
     case 0x66: case 0x36: MECOKI(6); break;
     case 0x67: case 0x37: MECOKI(7); break;
+    case 0x68: case 0x37: MECOKI(8); break;
+    case 0x69: case 0x37: MECOKI(9); break;
+    case 0x70: case 0x37: MECOKI(10); break;
     case 46: 
       OKILIST[MEOKI].FRAMEKILL = 1;
       OKILIST[MEOKI].STARTUP = 0;
@@ -945,65 +629,5 @@ d3.selectAll(".CHAR"+HASHCHAR).classed("SEL",true);
 
 </script>
 
-<!-- 
-<script src="tabletop.js"></script>
-<script>
-
-var CHARSHEET = [];
-// CHARSHEET["ALX"] = "Alex";
-// CHARSHEET["BRD"] = "Birdie";
-// CHARSHEET["CMY"] = "Cammy";
-// CHARSHEET["CNL"] = "Chunli";
-// CHARSHEET["DSM"] = "Dhalsim";
-// CHARSHEET["FAN"] = "Fang";
-// CHARSHEET["GUL"] = "Guile";
-// CHARSHEET["KRN"] = "Karin";
-// CHARSHEET["KEN"] = "Ken";
-CHARSHEET["LAR"] = "Laura";
-// CHARSHEET["VEG"] = "Mbison";
-// CHARSHEET["NSH"] = "Nash";
-// CHARSHEET["NCL"] = "Necalli";
-// CHARSHEET["RSD"] = "Rashid";
-// CHARSHEET["RMK"] = "Rmika";
-// CHARSHEET["RYU"] = "Ryu";
-// CHARSHEET["BLR"] = "Vega";
-// CHARSHEET["ZGF"] = "Zangief";
-
-function MECSHEET(data, tabletop) {  
-    
-  CHARS[0].forEach(function(k){
-    if (CHARSHEET[k]) {
-      console.log(k,data[CHARSHEET[k]]);
-      var dlAnchorElem = document.createElement("a");
-      dlAnchorElem.href = URL.createObjectURL(
-                            new Blob(
-                                [d3.tsv.format(data[CHARSHEET[k]].elements)],
-                                {type:'text/tsv'}
-                            )
-                        );
-      dlAnchorElem.setAttribute("download", k+".txt");
-      dlAnchorElem.click();
-    }
-  });
-}
-
-Tabletop.init( { key: "https://docs.google.com/spreadsheets/d/1oS6k1bXdcT9A56_b1QQFXkzn4SyPP-P9q7HiqyuEncI/pubhtml",
-                 callback: MECSHEET,
-                 simpleSheet: false } );
-
-
-</script> -->
-
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-72771119-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
 </body>
 </html>

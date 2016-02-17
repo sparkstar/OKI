@@ -1,0 +1,303 @@
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: sans-serif;
+  margin-bottom: 500px;
+}
+
+path {
+  stroke-width: 1px;
+  stroke: #333;
+  fill: #ddd;
+  vector-effect: non-scaling-stroke;
+}
+
+a {
+  color: #0079d3;
+}
+
+.GRID line {
+  vector-effect: non-scaling-stroke;
+}
+
+.REPLAY line {
+  vector-effect: non-scaling-stroke;
+}
+
+.UNOC { display: none; }
+
+.fred { fill: #c00 !important; }
+
+.gray { stroke: #333; }
+.red { stroke: #f00; }
+.green { stroke: #0f0; }
+.blue { stroke: #00f; }
+.cyan { stroke: #0ff; }
+.yellow { stroke: #ff0; }
+
+.p1gray { stroke: #333; }
+.p1red { stroke: #f00; }
+.p1green { stroke: #0f0; }
+.p1blue { stroke: #00f; }
+.p1hit { stroke: #c6f; }
+.p1cyan { stroke: #0ff; }
+.p1yellow { stroke: #ff0; }
+
+.p2gray { stroke: #333; }
+.p2red { stroke: #f66; }
+.p2green { stroke: #6f6; }
+.p2blue { stroke: #66f; }
+.p2hit { stroke: #c6f; }
+.p2cyan { stroke: #6ff; }
+
+.hitbox { color: #f99; }
+.hit { color: #969; }
+.first { color: #cfc; background-color: #363;}
+.iasa1 { color: #999;}
+.UCPOINT { width: 60px; display: inline-block; }
+
+#REPLAYS {
+  text-align: center;
+  /*display: inline-block;*/
+}
+
+#REPLAYS  !svg + div {
+  /*display: inline-block;*/
+}
+
+#REPLAYS div {
+  height: 500px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: inline-block;
+  padding-right: 2em;
+}
+
+#LINKS {
+  /*height: 500px;*/
+  white-space: nowrap;
+  overflow: auto;
+}
+
+#FRAMES, #KD, #TOTALS {
+  white-space: nowrap;
+  /*height: 500px;*/
+  /*overflow-x: hidden;*/
+  /*overflow-y: auto;*/
+  /*display: inline-block;*/
+  /*padding-right: 2em;*/
+}
+
+#FRAMES div {
+  display: inline-block;
+  vertical-align: top;
+}
+
+table.FRAMES {
+  table-layout: fixed;
+  font: 10px sans-serif;
+  text-align: center;
+  color: #ccc;
+}
+
+table.FRAMES tr:nth-child(even) {
+  background-color: #333; 
+}
+
+table.FRAMES tr:nth-child(odd) {
+  background-color: #111; 
+}
+table.FRAMES td {
+  white-space: nowrap;
+}
+
+table.FRAMES tr:hover {
+  background-color: #030;
+}
+
+table.FRAMES tr.UC {
+  background-color: #060;
+}
+table.FRAMES td.UC {
+  background-color: #030;
+}
+
+#LINKS div.COL {
+  display: inline-block;
+  vertical-align: top;
+}
+
+#LINKS div.COL div {
+  text-align: left;
+  padding: 10px;
+}
+
+#LINKS button {
+  background-color: #ccc;
+  padding: 10px 10px;
+}
+
+svg {
+  border: 1px solid #333;
+  margin-top: 10px;
+}
+
+.REPLAY rect {
+  stroke-width: 1px;
+  /*stroke: #333;*/
+  fill: none;
+  /*opacity: 0.8;*/
+  mix-blend-mode: screen;
+  vector-effect: non-scaling-stroke;
+}
+
+.REPLAY rect.clip {
+  fill: #330;
+}
+
+.REPLAY text {
+  text-anchor: middle;
+  fill: #999;
+  font: 8px sans-serif;
+}
+
+.rects text {
+  text-anchor: middle;
+  fill: #999;
+  font: 10px sans-serif;
+}
+
+.axis {
+  font: 10px sans-serif;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.axis text {
+  fill: #ddd;
+}
+
+.axis .domain {
+  fill: none;
+  stroke: #000;
+  stroke-opacity: .3;
+  stroke-width: 10px;
+  stroke-linecap: round;
+}
+
+.axis .halo {
+  fill: none;
+  stroke: #ddd;
+  stroke-width: 8px;
+  stroke-linecap: round;
+}
+
+.slider .handle {
+  fill: #fff;
+  fill-opacity: .75;
+  stroke: #000;
+  stroke-opacity: .5;
+  stroke-width: 1.25px;
+  cursor: crosshair;
+}
+
+#OKI > span.GRID {
+  color: #ccc;
+}
+
+.GRID > span:nth-child(10n) {
+  color: #eee;
+}
+
+
+.GRID > span.ACTIVE {
+  color: #fcc;
+}
+
+.GRID > span.STARTUP {
+  color: #aaa;
+}
+
+.GRID > span.RECOVERY {
+  color: #aaa;
+}
+
+.GRID > span.WAKEUP {
+  color: #cfc;
+}
+
+.GRID > span.FK {
+  color: #ccc;
+}
+
+
+.UCLICK:hover {
+  color: #fff;
+  background-color: #990;
+  cursor: pointer;
+}
+
+button.CHAR {
+  padding: 5px;
+  margin: 3px;
+  /*width: 8%;*/
+  background-color: #999;
+}
+
+button.SEL {
+  background-color: #ffc;
+}
+
+#OKI {    
+  cursor: pointer;
+}
+
+.CMD {
+  color: #999;
+}
+
+.UCY1 {    
+  background-color: #033;
+}
+
+.UCY2 {    
+  background-color: #033;
+}
+
+.UCY3 {    
+  background-color: #220;
+}
+
+.UCY4 {    
+  background-color: #220;
+}
+
+.UCY5 {    
+  background-color: #220;
+}
+
+.UCY6 {    
+  background-color: #220;
+}
+
+.UCY7 {    
+  background-color: #220;
+}
+
+
+.UCOKI {
+  background-color: #020;
+}
+
+#FRAMEKILLS {
+  line-height: 1.5em;
+}
+
+.FRAMEKILL {
+  color: #999;
+}
+
+button.CHARRESET {
+  margin-left: 50px;
+}
