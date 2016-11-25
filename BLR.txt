@@ -18,7 +18,7 @@ jump LK		4	6	-	-	-	40		8	70	0	M	-	-	48	84
 jump MK		5	7	-	-	-	70		12	100	12	M	-	-	84	120				
 jump HK		9	5	-	-	-	90		15	150	15	M	-	-	108	180				
 mercury shard	f+MK	22	3	13	0	-4	60	37	12	100	10	M	-	2	72	120				
-buster claw	f+HP	13	4	20	-3	-14	80	38	15	150	13	H	-	12	96	180				
+buster claw	f+HP	13	2	24	-3	-14	80	38	15	150	13	H	-	12	96	180				
 matador flash MASH	HP > HP > MP+MK (claw only)	8			KD	-10	80*54		15*15	150*72	13*10	H*H	-	KD	96*54	180*72	77	18	23	MASH MP+MK
 matador flash	HP > HP > MP+MK (claw only)	8			KD	-10	80*54		15*15	150*72	13*10	H*H	-	KD	96*54	180*72	78	19	24	NO MASH MP+MK
 matador blitz MASH	MP > HK > MP+MK (claw off)	6			KD	-16	60		12*15	100	10*13	H	SP	KD	72	120	77	18	23	MASH MP+MK
@@ -45,14 +45,14 @@ grand izuna drop LP	hcb+LP (claw off)	6	2	44	KD	-	50*80		-	100*100	-	T	-	KD	50*8
 grand izuna drop MP	hcb+MP (claw off)	6	2	44	KD	-	50*90		-	100*100	-	T	-	KD	50*90	100*100	63	14	14	
 grand izuna drop HP	hcb+HP (claw off)	6	2	44	KD	-	50*100		-	100*100	-	T	-	KD	50*100	100*100	63	14	14	
 grand izuna drop EX	hcb+PP (claw off)	6	2	44	KD	-	80*100		-	100*150	-	T	-	KD	80*100	100*150	68	19	19	
-crimson terror LK	qcf+LK	8	2(16)5	10	0	-6	20*60		3*15	20*100	5*15	H*H	CA	0	24*60	24*100				
-crimson terror MK	qcf+MK	17	2(11)2(21)5	12	2	-7	20*20*60		3*3*15	20*20*100	5*5*15	H*H*H	CA	-2	24*20*60	24-20*100				
-crimson terror HK	qcf+HK	19	4(12)2(10)3(22)5	14	KD	-8	20x3*60		3x3*15	20x3*100	5x3*15	H	CA	KD	24*20*20*60	24*20*20*100	89	30	35	
-crimson terror EX	qcf+KK	16	5(14)3(8)3(8)3(18)5	10	KD	-2	20x4*60		3x4*15	20x4*100	5x4*15	H	-	KD	24*20x3*60	24*20x3*100	97	38	43	
-aurora spin edge LP	qcb+LP	12	6	20	KD	-7	100		16	200	25	H	CA	KD	120	240	90	31	36	
-aurora spin edge MP	qcb+MP	15	6	18	KD	-6	100		16	200	25	H	CA	KD	120	240	92	33	38	
-aurora spin edge HP	qcb+HP	12	7	15	KD	-	100		16	200	-	H	CA	KD	120	240	-	-	-	
-aurora spin edge EX	qcb+PP	12	7(12)4	21	KD	-3	50*100		16*16	100*100	13*25	H*H	-	KD	120*100	120*100	86	27	32	
+crimson terror LK	qcf+LK	8	2(17)5	12	0	-6	20*60	43	3*15	20*100	5*15	H*H	CA	0	24*60	24*100				
+crimson terror MK	qcf+MK	17	2(10)2(20)5	14	2	-7	20*20*60	69	3*3*15	20*20*100	5*5*15	H*H*H	CA	-2	24*20*60	24-20*100				
+crimson terror HK	qcf+HK	19	4(12)3(10)3(22)5	16	KD	-8	20x3*60	93	3x3*15	20x3*100	5x3*15	H	CA	KD	24*20*20*60	24*20*20*100	89	30	35	
+crimson terror EX	qcf+KK	16	5(14)3(8)3(8)3(18)5	10	KD	-2	20x4*60	92	3x4*15	20x4*100	5x4*15	H	-	KD	24*20x3*60	24*20x3*100	97	38	43	
+aurora spin edge LP	qcb+LP	12	6	20	KD	-7	100	37	16	200	25	H	CA	KD	120	240	90	31	36	
+aurora spin edge MP	qcb+MP	15	6	18	KD	-6	100	38	16	200	25	H	CA	KD	120	240	92	33	38	
+aurora spin edge HP	qcb+HP	12	4	18	KD	-4	100	33	16	200	25	H	CA	KD	120	240	101	42	47	
+aurora spin edge EX	qcb+PP	12	7(12)4	21	KD	-3	50*100	55	16*16	100*100	13*25	H*H	-	KD	120*100	120*100	86	27	32	
 switch claw	qcf+P			23				23	-			-	-	-	-	-				
 CLAW OFF CANCEL	qcf+P			22				22	-			-	-	-	-	-				
 CLAW ON CANCEL	qcf+P			20				20	-			-	-	-	-	-				
