@@ -1,18 +1,18 @@
 Move	Command	Startup	Active	Recovery	Hit Advantage	CH hit adv.	Block Advantage	 Damage	Stun	CH Damage	CH Stun	Chip	Total 	Hitstop	Attack Level	Cancel Ability	KD Adv.	KDR Adv.	KDRB Adv.	Note
-Forward Dash			20																	
-Back Dash			24																	
-Standing LP		5	3	9	5		3													
-Standing MP		7	4	13	5		2													
-Standing HP		8	6	22	-2		-7													
-Standing LK		4	3	8	4		2													
-Standing MK		6	2	14	7		4													
-Standing HK		8	5	21	5		2													
-Crouching LP		5	3	9	5		2													
-Crouching MP		6	3	14	4		2													
-Crouching HP		10	2	21	4		-5													
-Crouching LK		4	2	13	3		0													
-Crouching MK		7	3	14	4		-2													
-Crouching HK		7	4	17	KD		-9										99	23	28	
+Forward Dash			20										20							
+Back Dash			24										24							
+Standing LP		5	3	9	5		3						17							
+Standing MP		7	4	13	5		2						24							
+Standing HP		8	6	22	-2		-7						36							
+Standing LK		4	3	8	4		2						15							
+Standing MK		6	2	14	7		4						22							
+Standing HK		8	5	21	5		2						34							
+Crouching LP		5	3	9	5		2						17							
+Crouching MP		6	3	14	4		2						23							
+Crouching HP		10	2	21	4		-5						33							
+Crouching LK		4	2	13	3		0						19							
+Crouching MK		7	3	14	4		-2						24							
+Crouching HK		7	4	17	KD		-9						28				99	23	28	
 Jumping LP		4	5																	
 Jumping MP		6	7																	
 Jumping HP		7	3																	
@@ -20,39 +20,39 @@ Vertical Jumping HP		10	5
 Jumping LK		4	9																	
 Jumping MK		6	4																	
 Jumping HK		9	6																	
-Harai-Geri(FHK)		12	3	24	2		-7													
-Chikara-Ashi		20	6	16	5		2													
+Harai-Geri(FHK)		12	3	24	2		-7						39							
+Chikara-Ashi		20	6	16	5		2						42							
 Flying Sumo Press		12	9																	
-Tokoshizume		20	6	16	5		2													
-Tsurane Harite		7	4	19	KD		-6										99	32	37	
-Hirate		13	4	24	KD												99	34	39	
-Saba-Ori		5	3	17	KD												99	6	6	
-Tawara Throw		5	3	17	KD												99	6	6	
-Neko Damashi		15	4	24	3		-6													
+Tokoshizume		20	6	16	5		2						42							
+Tsurane Harite		7	4	19	KD		-6						30				99	32	37	
+Hirate		13	4	24	KD								41				99	34	39	
+Saba-Ori		5	3	17	KD								25				99	6	6	
+Tawara Throw		5	3	17	KD								25				99	6	6	
+Neko Damashi		15	4	24	3		-6						43							
 Onigawara		1		5																
-Raiden-Ho		17	2	24	KD		-2										99	20	25	
-L Sumo Headbutt		10	17	24	KD		-4										99	32	37	
-M Sumo Headbutt		8	22	23	KD		-7										99	34	39	
-H Sumo Headbutt		12	28	27	KD		-12										99	32	39	
-EX Sumo Headbutt		7	25	32	KD		-26										99	21	26	
-L Hundred Hand Slap		7	8	14	3		2													
-M Hundred Hand Slap		17	10	14	3		1													
-H Hundred Hand Slap		19	14	15	2		-2													
-EX Hundred Hand Slap		16	14	15	4		-2													
+Raiden-Ho		17	2	24	KD		-2						43				99	20	25	
+L Sumo Headbutt		10	17	24	KD		-4						51				99	32	37	
+M Sumo Headbutt		8	22	23	KD		-7						53				99	34	39	
+H Sumo Headbutt		12	28	27	KD		-12						67				99	32	39	
+EX Sumo Headbutt		7	25	32	KD		-26						64				99	21	26	
+L Hundred Hand Slap		7	8	14	3		2						29							
+M Hundred Hand Slap		17	10	14	3		1						41							
+H Hundred Hand Slap		19	14	15	2		-2						48							
+EX Hundred Hand Slap		16	14	15	4		-2						45							
 LP-MP-H Hundread Slap					KD												99	38	43	
-L Sumo Smash		11	9	24	KD		-2										99	7	7	
-M Sumo Smash		13	10	24	KD		-2										99	7	7	
-H Sumo Smash		16	16	24	KD		-2										99	7	7	
+L Sumo Smash		11	9	24	KD		-2						44				99	7	7	
+M Sumo Smash		13	10	24	KD		-2						47				99	7	7	
+H Sumo Smash		16	16	24	KD		-2						56				99	7	7	
 Sumo Smash(Cross-up)					KD		-4										99	7	7	
-EX Sumo Smash		8	18	19	KD		5										99	27	32	
+EX Sumo Smash		8	18	19	KD		5						45				99	27	32	
 EX Sumo Smash(Cross-up)					KD		-2													
-L Oicho Throw		7	2	60	KD												99	7	7	
-M Oicho Throw		7	2	60	KD												99	7	7	
-H Oicho Throw		7	2	60	KD												99	7	7	
-EX Oicho Throw		5	2	60	KD												99	7	7	
+L Oicho Throw		7	2	60	KD								69				99	7	7	
+M Oicho Throw		7	2	60	KD								69				99	7	7	
+H Oicho Throw		7	2	60	KD								69				99	7	7	
+EX Oicho Throw		5	2	60	KD								67				99	7	7	
 "VOni-Daikaku
-"		10	24	20	KD		-4													
-VOni-Daikaku(Max Hold)		60	24	20	KD		GB													
-Voni-Muso		3	24	20	KD															
+"		10	24	20	KD		-4						54							
+VOni-Daikaku(Max Hold)		60	24	20	KD		GB						104							
+Voni-Muso		3	24	20	KD								47							
 "Kamigashima
-"		9	29	37	KD		-26													
+"		9	29	37	KD		-26						75							
