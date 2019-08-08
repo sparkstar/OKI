@@ -54,5 +54,4 @@ EX Oicho Throw		5	2	60	KD								67				99	12	12
 "		10	24	20	KD		-4						54							
 VOni-Daikaku(Max Hold)		60	24	20	KD		GB						104							
 Voni-Muso		3	24	20	KD								47							
-Kamigashima
-		9	29	37	KD		-26						75				99	22	27	
+Kamigashima		9	29	37	KD		-26						75				99	22	22	
