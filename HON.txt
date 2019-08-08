@@ -45,6 +45,7 @@ M Sumo Smash		13	10	24	KD		-2						47				65	7	7
 H Sumo Smash		16	16	24	KD		-2						56				65	7	7	
 Sumo Smash(Cross-up)					KD		-4										65	7	7	
 EX Sumo Smash		8	18	19	KD		5						45				99	27	32	
+EX Sumo Smash(2HIT)		8	18	19	KD		5						45				99	26	31	
 EX Sumo Smash(Cross-up)					KD		-2													
 L Oicho Throw		7	2	60	KD								69				99	12	12	
 M Oicho Throw		7	2	60	KD								69				99	12	12	
