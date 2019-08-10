@@ -40,6 +40,9 @@ M Hundred Hand Slap		17	10	14	3		1						41
 H Hundred Hand Slap		19	14	15	2		-2						48							
 EX Hundred Hand Slap		16	14	15	4		-2						45							
 LP-MP-H Hundread Slap					KD												99	38	43	
+LP-MP-M Hundread Slap					KD												99	41	46	
+LP-MP-L Hundread Slap					KD												99	27	32	
+LP-MP-MKP					KD												99	36	41
 L Sumo Smash		11	9	24	KD		-2						44				65	7	7	
 M Sumo Smash		13	10	24	KD		-2						47				65	7	7	
 H Sumo Smash		16	16	24	KD		-2						56				65	7	7	
